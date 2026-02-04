@@ -20,7 +20,7 @@ module pipe_stage #(
   assign out_valid = valid_q;
   assign out_data  = data_q;
 
-  always_ff @(posedge clk or negedge rst_n) begin
+  always @(posedge clk ) begin
     if (!rst_n) begin
       valid_q <= 1'b0;
       data_q  <= '0;
